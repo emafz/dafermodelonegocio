@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dafer - Documento Estratégico</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e9d5ff; /* purple-200 */
+            border-radius: 20px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#F8F9FA] font-sans text-gray-800">
+
+    <!-- HEADER STICKY -->
+    <header class="sticky top-0 z-50 bg-white border-b border-purple-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-purple-800 text-white p-2 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-printer text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black text-purple-900 tracking-tight">DAFER</span>
+                        <span class="ml-2 text-sm font-semibold text-purple-600 uppercase tracking-widest hidden sm:inline-block">
+                            Industria Gráfica
+                        </span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full font-medium">
+                    <i class="ph ph-file-text text-base"></i>
+                    <span class="hidden sm:inline">Documento de Lectura</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex items-start gap-12">
+        
+        <!-- NAVEGACIÓN LATERAL -->
+        <nav class="hidden lg:block w-64 shrink-0 sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
+            <div class="mb-4 text-xs font-bold text-gray-400 uppercase tracking-wider pl-3">
+                Índice del Documento
+            </div>
+            <ul id="nav-menu" class="space-y-1 border-l-2 border-purple-100 pb-10">
+                <li><button data-target="cabecera" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-purple-600 text-purple-800 font-bold bg-purple-50/50">Resumen ejecutivo</button></li>
+                <li><button data-target="sec-1" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">1. Modelo de negocio</button></li>
+                <li><button data-target="sec-2" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">2. Productos estandarizados</button></li>
+                <li><button data-target="sec-3" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">3. Estrategia de precios</button></li>
+                <li><button data-target="sec-4" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">4. Estrategia comercial</button></li>
+                <li><button data-target="sec-5" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">5. Estrategia de marketing</button></li>
+                <li><button data-target="sec-6" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">6. Optimización operativa</button></li>
+                <li><button data-target="sec-7" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">7. Estructura organizacional</button></li>
+                <li><button data-target="sec-8" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">8. Plan por fases</button></li>
+                <li><button data-target="sec-9" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">9. Decisiones inmediatas</button></li>
+                <li><button data-target="sec-10" class="nav-btn w-full text-left px-4 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px] border-transparent text-gray-500 hover:text-purple-600 hover:border-purple-300">10. Modelo objetivo</button></li>
+            </ul>
+        </nav>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="flex-1 bg-white rounded-2xl shadow-xl shadow-purple-900/5 border border-purple-100 overflow-hidden mb-20">
+            
+            <article class="p-8 sm:p-12 lg:p-16 max-w-4xl mx-auto">
+                
+                <!-- CABECERA & RESUMEN EJECUTIVO -->
+                <section id="cabecera" class="mb-16 scroll-mt-24 doc-section">
+                    <div class="mb-8 pb-8 border-b-2 border-purple-100">
+                        <h3 class="text-purple-600 font-bold tracking-widest uppercase text-sm mb-4">Documento Estratégico Integral</h3>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-8">
+                            Transformar una imprenta tradicional en una imprenta ágil 24 hs
+                        </h1>
+                        
+                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 grid sm:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <span class="block text-gray-500 mb-1">Ubicación</span>
+                                <strong class="text-gray-900">Avellaneda, provincia de Santa Fe, Argentina</strong>
+                            </div>
+                            <div>
+                                <span class="block text-gray-500 mb-1">Fecha de actualización</span>
+                                <strong class="text-gray-900 flex items-center gap-2">
+                                    <i class="ph ph-calendar text-purple-600 text-base"></i> Febrero 2026
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Resumen ejecutivo</h2>
+                    <div class="prose prose-lg text-gray-700 max-w-none">
+                        <p class="mb-6 leading-relaxed">
+                            La reestructuración no debe plantearse como "sumar digital", sino como cambiar el centro del negocio:
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+                                <h4 class="text-red-800 font-bold mb-3">Antes</h4>
+                                <p class="text-red-900/80 text-sm">Imprenta tradicional orientada a trabajos generales, con fuerte dependencia de offset, venta por mostrador y tiempos largos.</p>
+                            </div>
+                            <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+                                <h4 class="text-green-800 font-bold mb-3">Después</h4>
+                                <p class="text-green-900/80 text-sm">Centro de impresión rápida 24 hs, con foco en digital bajo demanda y gigantografía.</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 mb-8 text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-purple-500 shrink-0 mt-1 text-xl"></i>
+                                <span><strong>Impresión digital bajo demanda:</strong> tiradas cortas, productos estandarizados, compra simple.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-purple-500 shrink-0 mt-1 text-xl"></i>
+                                <span><strong>Gigantografía:</strong> línea rentable, rápida, visible y con alto valor percibido.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-purple-500 shrink-0 mt-1 text-xl"></i>
+                                <span><strong>Offset:</strong> línea secundaria para trabajos programados, por volumen y con menor urgencia.</span>
+                            </li>
+                        </ul>
+
+                        <blockquote class="border-l-4 border-purple-500 bg-purple-50 p-6 rounded-r-xl mb-6 text-purple-900 font-medium text-lg italic shadow-sm">
+                            "La oportunidad no está en vender 'de todo', sino en vender rápido, claro y repetible. La empresa debe pasar de ser una 'imprenta generalista de mostrador' a una unidad comercial y productiva enfocada en velocidad, catálogo y respuesta inmediata."
+                        </blockquote>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 1 -->
+                <section id="sec-1" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">1.</span> Redefinición del modelo de negocio
+                    </h2>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">1.1 Nueva propuesta de valor</h3>
+                    <p class="text-gray-700 mb-4 bg-purple-50/50 p-4 rounded-lg border border-purple-100 font-medium">
+                        “Imprenta rápida 24 hs en Avellaneda: impresión digital y gigantografía con productos claros, compra simple y entrega ágil.”
+                    </p>
+                    <p class="text-gray-700 mb-4">Esto implica 5 promesas concretas:</p>
+                    <ul class="list-disc pl-6 space-y-2 mb-8 text-gray-700 marker:text-purple-500">
+                        <li><strong>Rapidez real:</strong> trabajos estándar listos en menos de 24 hs.</li>
+                        <li><strong>Precios claros:</strong> productos definidos, con cantidades y terminaciones cerradas.</li>
+                        <li><strong>Compra simple:</strong> pedido por WhatsApp, formulario, Mercado Libre o tienda online.</li>
+                        <li><strong>Calidad consistente:</strong> catálogo limitado al inicio para asegurar cumplimiento.</li>
+                        <li><strong>Asesoramiento útil:</strong> cuando el cliente no sabe qué necesita, se lo guía rápido.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">1.2 Nuevo modelo híbrido</h3>
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-6">
+                        <table class="w-full text-left border-collapse bg-white">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-800 border-b border-gray-200">
+                                    <th class="p-4 font-bold">Línea</th>
+                                    <th class="p-4 font-bold">Rol estratégico</th>
+                                    <th class="p-4 font-bold">Tipo de trabajo</th>
+                                    <th class="p-4 font-bold">Promesa</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-gray-100">
+                                    <td class="p-4 font-semibold text-purple-800">Digital bajo demanda</td>
+                                    <td class="p-4">Línea principal</td>
+                                    <td class="p-4 text-gray-600">tiradas cortas, urgentes, repetitivas</td>
+                                    <td class="p-4 text-gray-600">entrega rápida y precio claro</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50">
+                                    <td class="p-4 font-semibold text-purple-800">Gigantografía</td>
+                                    <td class="p-4">Segunda línea de crecimiento</td>
+                                    <td class="p-4 text-gray-600">cartelería, lonas, vinilos, banners</td>
+                                    <td class="p-4 text-gray-600">alto impacto visual y margen</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold text-gray-800">Offset</td>
+                                    <td class="p-4">Línea secundaria</td>
+                                    <td class="p-4 text-gray-600">tiradas medias/altas, planificadas</td>
+                                    <td class="p-4 text-gray-600">mejor costo unitario con plazo pactado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-purple-900 text-white p-5 rounded-xl mb-8 flex items-start gap-4 shadow-md">
+                        <i class="ph ph-warning-circle text-purple-300 shrink-0 mt-0.5 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-purple-200 mb-1">Regla clave</h4>
+                            <p class="text-sm leading-relaxed">Lo urgente y estándar va a digital.<br/>Lo grande y visible va a gigantografía.<br/>Lo voluminoso y programado va a offset.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">1.3 Segmentación de clientes</h3>
+                    <p class="text-gray-700 mb-6">La imprenta debe dejar de atender a todos igual y segmentar:</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="border border-purple-100 rounded-xl p-5 bg-white shadow-sm">
+                            <h4 class="font-bold text-lg text-purple-800 mb-2 flex items-center gap-2">
+                                <i class="ph ph-target text-xl"></i> A. Empresas y comercios (B2B) — prioridad alta
+                            </h4>
+                            <p class="text-sm text-gray-600 mb-3">Ideal para ventas recurrentes y ticket más estable.</p>
+                            <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">Subsegmentos:</strong>
+                                    <ul class="list-disc pl-5 text-gray-600">
+                                        <li>Comercios minoristas</li>
+                                        <li>Pymes industriales y de servicios</li>
+                                        <li>Distribuidores</li>
+                                        <li>Profesionales (estudios, inmobiliarias, salud)</li>
+                                        <li>Instituciones (colegios, clubes, eventos)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="block text-gray-800 mb-1">Necesidades:</strong>
+                                    <ul class="list-disc pl-5 text-gray-600">
+                                        <li>papelería comercial</li>
+                                        <li>cartelería</li>
+                                        <li>reposición rápida</li>
+                                        <li>piezas promocionales</li>
+                                        <li>entrega previsible</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 shadow-sm">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2 flex items-center gap-2">
+                                <i class="ph ph-users text-xl"></i> B. Público final — prioridad media
+                            </h4>
+                            <p class="text-sm text-gray-600 mb-3">Más variable, pero útil para flujo diario. Necesidades: tarjetas, stickers, invitaciones, posters, ploteos, banners, impresiones urgentes.</p>
+                        </div>
+
+                        <div class="border border-purple-100 rounded-xl p-5 bg-white shadow-sm">
+                            <h4 class="font-bold text-lg text-purple-800 mb-2 flex items-center gap-2">
+                                <i class="ph ph-target text-xl"></i> C. Revendedores / agencias / diseñadores — prioridad alta
+                            </h4>
+                            <p class="text-sm text-gray-600 mb-3">Muy interesante por recurrencia y tercerización. Necesitan: proveedor rápido, calidad consistente, tiempos firmes, posibilidad de marca blanca.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">1.4 Diferenciación frente a competencia local</h3>
+                    <p class="text-gray-700 mb-4">La diferenciación no debe basarse solo en precio.</p>
+                    <div class="bg-purple-50 p-4 rounded-lg mb-6">
+                        <strong class="block text-purple-900 mb-1">Posicionamiento competitivo ideal:</strong>
+                        <span class="text-purple-800 italic">“Más rápido, más claro y más fácil de comprar.”</span>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <strong class="block text-green-700 mb-2">Diferenciales concretos:</strong>
+                            <ul class="list-disc pl-5 text-gray-600 text-sm space-y-1 marker:text-green-500">
+                                <li>Entrega en 24 hs en productos seleccionados</li>
+                                <li>Catálogo con productos listos para pedir</li>
+                                <li>Canal de pedido digital</li>
+                                <li>Archivo y presupuesto en minutos</li>
+                                <li>Atención orientada a empresas</li>
+                                <li>Reposición express para clientes recurrentes</li>
+                                <li>Gigantografía como línea fuerte y visible</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="block text-red-700 mb-2">Lo que NO conviene hacer:</strong>
+                            <ul class="list-disc pl-5 text-gray-600 text-sm space-y-1 marker:text-red-500">
+                                <li>Competir por ser “la más barata”</li>
+                                <li>Aceptar cualquier trabajo fuera de sistema</li>
+                                <li>Seguir presupuestando todo desde cero</li>
+                                <li>Mezclar urgentes con trabajos largos sin prioridad definida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 2 -->
+                <section id="sec-2" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">2.</span> Desarrollo de líneas estandarizadas
+                    </h2>
+                    <p class="text-gray-700 mb-6 text-lg">La base del crecimiento será un catálogo corto, rentable y repetible, no un menú infinito.</p>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">2.1 Línea digital bajo demanda</h3>
+                    <p class="text-gray-700 mb-4"><strong>Objetivo:</strong> Construir una línea de productos rápidos, simples y frecuentes.</p>
+                    
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-6">
+                        <table class="w-full text-left border-collapse bg-white">
+                            <thead>
+                                <tr class="bg-purple-50 text-purple-900 border-b border-purple-100">
+                                    <th class="p-4 font-bold">Producto</th>
+                                    <th class="p-4 font-bold">Versiones recomendadas</th>
+                                    <th class="p-4 font-bold">Plazo estándar</th>
+                                    <th class="p-4 font-bold text-purple-700">Plazo express</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-gray-800">Tarjetas personales</td><td class="p-3 text-gray-600">50 / 100 / 250 unidades</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">4 a 8 hs</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-gray-800">Volantes A5</td><td class="p-3 text-gray-600">100 / 250 / 500</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">mismo día</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-gray-800">Flyers A4/A5</td><td class="p-3 text-gray-600">tiradas cortas</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">mismo día</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-gray-800">Stickers troquel simple</td><td class="p-3 text-gray-600">packs estándar</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">24 hs</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-gray-800">Etiquetas autoadhesivas</td><td class="p-3 text-gray-600">packs por cantidad</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">24 hs</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-gray-800">Hojas membretadas</td><td class="p-3 text-gray-600">50 / 100 / 250</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">24 hs</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-gray-800">Sobres impresos</td><td class="p-3 text-gray-600">tandas cerradas</td><td class="p-3 text-gray-600">24 a 48 hs</td><td class="p-3 font-bold text-purple-700">según stock</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-gray-800">Folletos dípticos simples</td><td class="p-3 text-gray-600">tandas cortas</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">24 hs</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-gray-800">Afiches A3</td><td class="p-3 text-gray-600">por unidad / packs</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">mismo día</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-gray-800">Menús / listas de precios</td><td class="p-3 text-gray-600">packs</td><td class="p-3 text-gray-600">24 hs</td><td class="p-3 font-bold text-purple-700">mismo día</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 mb-8">
+                        <strong class="block text-gray-800 mb-2">Criterio de estandarización</strong>
+                        <p class="text-sm text-gray-600 mb-2">Cada producto debe definirse con: tamaño, papel/material, impresión (faz/doble faz), cantidad fija, terminación fija, plazo, precio cerrado, adicional por diseño. <br/><strong>Lo que no esté dentro de esas reglas pasa a “presupuesto especial”.</strong></p>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">2.2 Línea de gigantografía</h3>
+                    <p class="text-gray-700 mb-4">Esta línea debe convertirse en el segundo motor del negocio porque tiene alto valor percibido, responde bien al B2B, permite vender estándar y personalizado, y mejora visibilidad local.</p>
+                    
+                    <ul class="grid sm:grid-cols-2 gap-x-4 gap-y-2 mb-6 text-sm text-gray-700">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Lona front estándar (m² o medida)</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Banner con estructura (80x200 / 60x160)</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Vinilo autoadhesivo (por m²)</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Vinilo de vidriera promo (packs)</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Calcos de vidriera / horarios</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Carteles rígidos (medidas fijas)</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Backing para eventos</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Señalética interior</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-purple-500 text-base"></i> Ploteo básico vehicular (kits)</li>
+                    </ul>
+                    <div class="bg-purple-50 text-purple-900 p-4 rounded-lg mb-8 text-sm border border-purple-100">
+                        <strong>Recomendación clave:</strong> En gigantografía, vender en 2 formatos: Productos estándar (rápidos y publicables online) y Productos personalizados (con base de precio y derivación).
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">2.3 Paquetes para empresas</h3>
+                    <p class="text-gray-700 mb-4">Los paquetes simplifican la decisión y suben el ticket promedio.</p>
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-8">
+                        <table class="w-full text-left border-collapse bg-white">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-800 border-b border-gray-200">
+                                    <th class="p-4 font-bold">Paquete</th>
+                                    <th class="p-4 font-bold">Incluye</th>
+                                    <th class="p-4 font-bold">Cliente objetivo</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-purple-800">Pack Inicio Comercial</td><td class="p-3 text-gray-600">tarjetas + volantes + cartel vidriera</td><td class="p-3 text-gray-500">comercio nuevo</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-purple-800">Pack Reposición Express</td><td class="p-3 text-gray-600">reimpresión de papelería y cartelería</td><td class="p-3 text-gray-500">clientes recurrentes</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold text-purple-800">Pack Punto de Venta</td><td class="p-3 text-gray-600">afiches + etiquetas + carteles + stickers</td><td class="p-3 text-gray-500">locales</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50/50"><td class="p-3 font-semibold text-purple-800">Pack Corporativo Básico</td><td class="p-3 text-gray-600">hojas membretadas + sobres + tarjetas</td><td class="p-3 text-gray-500">pymes</td></tr>
+                                <tr><td class="p-3 font-semibold text-purple-800">Pack Promo Mensual</td><td class="p-3 text-gray-600">piezas gráficas para promos del mes</td><td class="p-3 text-gray-500">comercios activos</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="ph ph-clock text-purple-600 text-xl"></i> 2.4 Productos Rápidos 24 hs
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">Debe existir una categoría visible y defendible. Solo incluir productos de producción predecible, con stock, diseño simple y bajo riesgo.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 rounded-r-lg text-sm text-red-900">
+                                <strong>Regla:</strong> Pedido confirmado + archivo antes de hora de corte = 24 hs. Si entra tarde, salta al otro ciclo. Todo cambio de archivo reinicia plazo.
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="ph ph-squares-four text-purple-600 text-xl"></i> 2.5 Estructura Ecommerce
+                            </h3>
+                            <p class="text-sm text-gray-600 mb-3">Cada producto subido debe tener: nombre, foto, medida, material, cantidad, qué incluye, qué NO incluye, tiempo, extras, y requisitos del archivo.</p>
+                            <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded-r-lg text-sm text-purple-900">
+                                <strong>Recomendación:</strong> Arrancar con 15 a 25 SKUs “comprables”. No subir todo el negocio al inicio.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 3 -->
+                <section id="sec-3" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">3.</span> Estrategia de precios
+                    </h2>
+                    
+                    <p class="text-gray-700 mb-6 text-lg">En el nuevo modelo, el precio debe premiar: velocidad, simplicidad, repetibilidad y uso eficiente de máquina.</p>
+
+                    <div class="bg-gray-900 text-white rounded-xl p-6 shadow-lg mb-8">
+                        <h4 class="text-purple-300 font-bold mb-3 uppercase tracking-wider text-sm">Fórmula de precio sugerida (3.2)</h4>
+                        <p class="font-mono text-lg font-medium tracking-tight break-words">
+                            Precio = <span class="text-blue-300">costo variable</span> + <span class="text-green-300">tiempo op.</span> + <span class="text-yellow-300">desperdicio</span> + <span class="text-purple-300">margen</span> + <span class="text-pink-300">recargo canal</span>
+                        </p>
+                        <p class="text-sm text-gray-400 mt-4">Incluir: papel, tinta, laminado, t. máquina, preparación, empaque, comisión, costo cobro, margen contingencia.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3">3.3 Márgenes recomendados</h3>
+                            <table class="w-full text-left border-collapse bg-white shadow-sm border border-gray-200 rounded-lg overflow-hidden">
+                                <tbody class="text-sm">
+                                    <tr class="border-b border-gray-100"><td class="p-3 text-gray-700 font-semibold">Digital estándar</td><td class="p-3 font-bold text-purple-700">55% a 70%</td></tr>
+                                    <tr class="border-b border-gray-100 bg-gray-50"><td class="p-3 text-gray-700 font-semibold">Digital express</td><td class="p-3 font-bold text-purple-700">65% a 80%</td></tr>
+                                    <tr class="border-b border-gray-100"><td class="p-3 text-gray-700 font-semibold">Gigantografía estándar</td><td class="p-3 font-bold text-purple-700">50% a 65%</td></tr>
+                                    <tr class="border-b border-gray-100 bg-gray-50"><td class="p-3 text-gray-700 font-semibold">Gigantografía personaliz.</td><td class="p-3 font-bold text-purple-700">55% a 75%</td></tr>
+                                    <tr><td class="p-3 text-gray-700 font-semibold">Offset programado</td><td class="p-3 text-gray-500">menor margen unitario, mayor volumen</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3">3.4 Precios por velocidad</h3>
+                            <table class="w-full text-left border-collapse bg-white shadow-sm border border-gray-200 rounded-lg overflow-hidden">
+                                <tbody class="text-sm">
+                                    <tr class="border-b border-gray-100"><td class="p-3 text-gray-700 font-semibold">Estándar</td><td class="p-3 text-gray-600">Base</td></tr>
+                                    <tr class="border-b border-gray-100 bg-purple-50"><td class="p-3 text-purple-900 font-semibold">24 hs</td><td class="p-3 font-bold text-purple-700">+15% a +25%</td></tr>
+                                    <tr class="border-b border-gray-100 bg-purple-100"><td class="p-3 text-purple-900 font-bold">Mismo día</td><td class="p-3 font-black text-purple-800">+25% a +40%</td></tr>
+                                    <tr><td class="p-3 text-gray-700 font-semibold">Prioridad extrema</td><td class="p-3 text-gray-500">Solo si capacidad lo permite</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <h4 class="font-bold text-gray-800 mb-2">3.5 Mercado Libre</h4>
+                            <p class="text-sm text-gray-600 mb-2">Publicar con precio algo superior al mostrador, costo absorbido de plataforma, costo de empaque y margen de retrabajos. Debe ser canal de captación rápida, no de negociación compleja. <strong>Vender:</strong> tarjetas, volantes, banners, packs. <strong>No vender:</strong> proyectos complejos.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <h4 class="font-bold text-gray-800 mb-2">3.6 Descuentos B2B</h4>
+                            <p class="text-sm text-gray-600">Sin descuento en la 1ra compra pequeña. Descuentos por: recurrencia (2da o 3ra compra), volumen, pago rápido o pedido estandarizado. <strong>Regla: no descontar “por pedir”.</strong></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 4 -->
+                <section id="sec-4" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">4.</span> Estrategia comercial
+                    </h2>
+
+                    <div class="grid sm:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3">4.1 De mostrador a venta activa</h3>
+                            <ul class="list-disc pl-5 text-gray-600 text-sm space-y-2">
+                                <li>Base de clientes actual organizada.</li>
+                                <li>Contacto semanal/quincenal.</li>
+                                <li>Ofertas de reposición.</li>
+                                <li>Catálogo digital por WhatsApp.</li>
+                                <li>Toma de pedido remota.</li>
+                            </ul>
+                            <p class="mt-3 text-sm font-semibold text-purple-700 bg-purple-50 p-2 rounded">Nuevo criterio: No vender “impresiones”; vender soluciones rápidas y reposiciones simples.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3">4.2 Desarrollo del canal online</h3>
+                            <ol class="list-decimal pl-5 text-gray-600 text-sm space-y-2 mb-3">
+                                <li><strong>WhatsApp Business:</strong> canal operativo inmediato.</li>
+                                <li><strong>Mercado Libre:</strong> validación rápida y volumen.</li>
+                                <li><strong>Tienda Nube:</strong> cuando existan SKUs, flujo y fotos. (Ofrecen plan inicial gratuito).</li>
+                            </ol>
+                            <p class="text-sm italic text-gray-500">Conclusión: ML primero para volumen, Tienda Nube después para marca propia.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-purple-100 shadow-sm mb-8">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                            <i class="ph ph-target text-purple-600 text-xl"></i> 4.3 Estrategia B2B (Foco Rentable)
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">Oferta ideal: atención prioritaria, reposición rápida, precios corporativos, línea 24 hs, archivo guardado.</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <strong class="text-gray-800 text-sm block mb-2">Método comercial Mínimo Viable:</strong>
+                            <p class="text-sm text-gray-600">Armar lista de 50-100 empresas → Clasificarlas → Contacto con propuesta simple → Visitar presencialmente las más valiosas → Ofrecer pack inicial o reposición.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3">4.4 Reactivación</h3>
+                            <p class="text-sm text-gray-600 mb-2">Recuperar caja rápida. Segmentar base en: activos, dormidos, perdidos, ocasionales.</p>
+                            <strong class="block text-xs uppercase text-gray-500 mb-1">Campañas:</strong>
+                            <ul class="text-sm text-purple-700 font-medium space-y-1">
+                                <li>"Volvimos con entrega rápida 24 hs"</li>
+                                <li>"Reimpresión express clientes habituales"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-3">4.5 Sistema preventa</h3>
+                            <p class="text-sm text-gray-600 mb-2">La venta empieza antes del local. Cliente elige → Recibe precio → Envía archivo → Checklist → Pago → Producción → Fecha.</p>
+                            <p class="text-sm text-gray-500">Herramientas: WA Business, respuestas rápidas, catálogo PDF, link de pago.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 5 -->
+                <section id="sec-5" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">5.</span> Estrategia de marketing
+                    </h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">5.1 Posicionamiento</h3>
+                        <p class="text-2xl font-black text-purple-800 tracking-tight">"Imprenta rápida 24 hs"</p>
+                        <p class="text-gray-600 text-sm mt-1">No como imprenta tradicional ni "hacemos de todo". Mensajes: imprimimos rápido, listos para pedir, reposición urgente.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8 text-sm">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">5.2 Digital Inicial (Bajo Pto)</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Google Business Profile optimizado</li>
+                                <li>WhatsApp Business profesional</li>
+                                <li>Redes sociales con enfoque catálogo</li>
+                                <li>Mercado Libre activo</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">5.3 Redes Sociales</h4>
+                            <p class="text-gray-600 mb-2">Publicar para vender. Cada post: Producto + beneficio + plazo + precio base + CTA a WhatsApp.</p>
+                            <p class="text-gray-500 italic">Mostrar urgencias resueltas, testimonios, B2B.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">5.4 Mercado Libre</h4>
+                            <p class="text-gray-600">Publicar 8-12 productos estrella. Fotos limpias, variaciones simples, respuestas rápidas y condiciones explícitas de archivo.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">5.5 & 5.6 Acciones Locales B2B</h4>
+                            <p class="text-gray-600">Visitas a comercios, alianzas con agencias, campañas de reactivación a ex clientes, propuestas específicas por rubro (gastronomía, salud, retail).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 6 -->
+                <section id="sec-6" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">6.</span> Optimización operativa
+                    </h2>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">6.1 Flujo para 24 hs</h3>
+                    <div class="flex flex-wrap gap-2 text-sm font-medium text-gray-700 mb-4 items-center">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full">Ingreso</span> <i class="ph ph-caret-right text-sm"></i>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full">Valida archivo</span> <i class="ph ph-caret-right text-sm"></i>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full">Pago</span> <i class="ph ph-caret-right text-sm"></i>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Clasifica (Pri)</span> <i class="ph ph-caret-right text-sm"></i>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full">Producción</span> <i class="ph ph-caret-right text-sm"></i>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full">QC</span> <i class="ph ph-caret-right text-sm"></i>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Entrega</span>
+                    </div>
+                    <p class="text-red-600 text-sm font-bold mb-8">Regla crítica: Ningún trabajo entra a producción sin archivo aprobado y condiciones claras.</p>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">6.2 Separación: Offset vs Digital</h3>
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-6">
+                        <table class="w-full text-left border-collapse bg-white">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-800 border-b border-gray-200">
+                                    <th class="p-3 font-bold">Proceso</th>
+                                    <th class="p-3 font-bold text-purple-700">Digital</th>
+                                    <th class="p-3 font-bold text-gray-600">Offset</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold">Tipo de pedido</td><td class="p-3">urgente / corto / estándar</td><td class="p-3 text-gray-500">programado / volumen</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50"><td class="p-3 font-semibold">Presupuesto</td><td class="p-3">rápido y cerrado</td><td class="p-3 text-gray-500">más técnico</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold">Cola de trabajo</td><td class="p-3">diaria</td><td class="p-3 text-gray-500">programada</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50"><td class="p-3 font-semibold">Prioridad</td><td class="p-3 font-bold text-purple-600">alta</td><td class="p-3 text-gray-500">secundaria</td></tr>
+                                <tr><td class="p-3 font-semibold">Promesa</td><td class="p-3">velocidad</td><td class="p-3 text-gray-500">economía por volumen</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-8 italic">El offset no debe “comerse” capacidad mental ni operativa de la línea rápida.</p>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">6.3 Presupuestación rápida</h3>
+                            <p class="text-sm text-gray-600">Matriz de precios cerrados para: productos estándar, medidas recurrentes, materiales fijos. Resultado: cotizaciones en minutos, menos errores.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">6.4 Prioridades (Tablero visual)</h3>
+                            <p class="text-sm text-gray-600">1. Express Mismo día → 2. 24 hs estándar → 3. Programados → 4. Offset → 5. Especiales. Todo con fecha y hora clara.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">6.5 KPIs (Indicadores clave)</h3>
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-6">
+                        <table class="w-full text-left border-collapse bg-white">
+                            <tbody class="text-sm">
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold">% de entregas en plazo</td><td class="p-3 font-bold text-green-600">&gt; 90%</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50"><td class="p-3 font-semibold">Tiempo de presupuestación</td><td class="p-3 text-gray-600">&lt; 15 min en estándar</td></tr>
+                                <tr class="border-b border-gray-100"><td class="p-3 font-semibold">% de retrabajos</td><td class="p-3 text-gray-600">&lt; 5%</td></tr>
+                                <tr class="border-b border-gray-100 bg-gray-50"><td class="p-3 font-semibold">Pedidos digitales vs mostrador</td><td class="p-3 text-gray-600">subir mes a mes</td></tr>
+                                <tr><td class="p-3 font-semibold">Ticket y recompra B2B</td><td class="p-3 text-gray-600">crecimiento sostenido</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-purple-900 text-purple-100 p-4 rounded-xl text-center font-medium">
+                        KPI Principal: Pedidos estándar cumplidos en 24 hs con rentabilidad positiva.
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 7 -->
+                <section id="sec-7" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">7.</span> Estructura organizacional
+                    </h2>
+                    <div class="prose prose-lg text-gray-700 max-w-none">
+                        <p class="mb-4 text-lg">No hace falta una estructura grande; hace falta claridad.</p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white border border-purple-100 shadow-sm rounded-xl p-6">
+                                <h4 class="font-bold text-purple-800 mb-3 flex items-center gap-2"><i class="ph ph-users text-xl"></i> Redistribución actual</h4>
+                                <ul class="text-sm space-y-2 text-gray-600 list-disc pl-4">
+                                    <li>Persona 1: presupuesto, toma pedido, seguimiento.</li>
+                                    <li>Persona 2: producción digital rápida.</li>
+                                    <li>Persona 3: terminación, armado, gigantografía, despacho.</li>
+                                    <li>Dueño/Encargado: clientes grandes, márgenes, alianzas.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white border border-purple-100 shadow-sm rounded-xl p-6">
+                                <h4 class="font-bold text-purple-800 mb-3 flex items-center gap-2"><i class="ph ph-lightning text-xl"></i> Esquema comercial MVP</h4>
+                                <p class="text-sm text-gray-600 mb-2">1 frente comercial activo (aunque sea multifunción al inicio). Debe atender WA, publicar, reactivar, cotizar.</p>
+                                <p class="text-sm text-red-600 font-medium">Error a evitar: Que el área comercial siga siendo “quien atiende cuando puede”.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 8 -->
+                <section id="sec-8" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">8.</span> Plan de implementación por fases
+                    </h2>
+
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-purple-300 bg-white p-6 rounded-r-xl shadow-sm border-y border-r border-gray-100">
+                            <h4 class="font-bold text-purple-900 text-xl m-0 mb-2">Fase 1 — Primeros 30 días</h4>
+                            <p class="text-gray-500 font-medium text-sm mb-3">Objetivo: Ordenar, enfocar y lanzar la propuesta rápida.</p>
+                            <ul class="text-sm text-gray-600 list-disc pl-5 space-y-1 mb-3">
+                                <li>Definir propuesta de valor y catálogo (15-25 SKUs)</li>
+                                <li>Lista de precios estándar y definir qué entra en 24 hs</li>
+                                <li>Separar línea digital / giga / offset</li>
+                                <li>Configurar WA Business y catálogo PDF</li>
+                                <li>Reactivar base actual y Mercado Libre</li>
+                            </ul>
+                            <p class="text-xs font-mono text-purple-600 bg-purple-50 inline-block px-2 py-1 rounded">Entregables: matriz precios, lista 24hs, protocolo WA.</p>
+                        </div>
+
+                        <div class="border-l-4 border-purple-500 bg-white p-6 rounded-r-xl shadow-sm border-y border-r border-gray-100">
+                            <h4 class="font-bold text-purple-900 text-xl m-0 mb-2">Fase 2 — 60 días</h4>
+                            <p class="text-gray-500 font-medium text-sm mb-3">Objetivo: Activar comercialmente y estabilizar operación.</p>
+                            <ul class="text-sm text-gray-600 list-disc pl-5 space-y-1 mb-3">
+                                <li>Lanzar campaña local "Imprenta rápida 24 hs"</li>
+                                <li>Visitar clientes B2B seleccionados y ofrecer packs</li>
+                                <li>Medir tiempos reales y ajustar precios</li>
+                                <li>Implementar tablero visual de pedidos</li>
+                                <li>Crear base de archivos para reimpresión</li>
+                            </ul>
+                            <p class="text-xs font-mono text-purple-600 bg-purple-50 inline-block px-2 py-1 rounded">Entregables: rutina semanal, cartera B2B, indicadores.</p>
+                        </div>
+
+                        <div class="border-l-4 border-purple-700 bg-white p-6 rounded-r-xl shadow-sm border-y border-r border-gray-100">
+                            <h4 class="font-bold text-purple-900 text-xl m-0 mb-2">Fase 3 — 90 días</h4>
+                            <p class="text-gray-500 font-medium text-sm mb-3">Objetivo: Escalar con previsibilidad y canal propio.</p>
+                            <ul class="text-sm text-gray-600 list-disc pl-5 space-y-1 mb-3">
+                                <li>Evaluar Tienda Nube con catálogo validado</li>
+                                <li>Formalizar paquetes y beneficios a frecuentes</li>
+                                <li>Consolidar sistema de recompra</li>
+                                <li>Medir rentabilidad por línea y depurar productos</li>
+                            </ul>
+                            <p class="text-xs font-mono text-purple-600 bg-purple-50 inline-block px-2 py-1 rounded">Entregables: portafolio rentable, proceso 24hs estable.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 9 -->
+                <section id="sec-9" class="mb-16 scroll-mt-24 doc-section">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3 border-b pb-4">
+                        <span class="text-purple-600">9.</span> Decisiones inmediatas
+                    </h2>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                            <h4 class="font-bold text-green-800 mb-4 flex items-center gap-2"><i class="ph-fill ph-check-circle text-xl"></i> Qué hacer YA</h4>
+                            <ul class="text-sm text-green-900 space-y-2 font-medium">
+                                <li>✓ Convertir la marca en “imprenta rápida”</li>
+                                <li>✓ Vender menos variedad, pero más claro</li>
+                                <li>✓ Armar catálogo corto</li>
+                                <li>✓ Cobrar la urgencia</li>
+                                <li>✓ Enfocar el offset como línea programada</li>
+                                <li>✓ Empujar fuerte gigantografía</li>
+                                <li>✓ Reactivar clientes dormidos y salir a vender</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                            <h4 class="font-bold text-red-800 mb-4 flex items-center gap-2"><i class="ph ph-warning-circle text-xl"></i> Qué dejar de hacer</h4>
+                            <ul class="text-sm text-red-900 space-y-2 font-medium">
+                                <li>✗ Presupuestar todo desde cero</li>
+                                <li>✗ Aceptar plazos ambiguos</li>
+                                <li>✗ Mezclar urgencias con trabajos largos</li>
+                                <li>✗ Depender solo del mostrador</li>
+                                <li>✗ Tener productos sin ficha, precio ni plazo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 10 & CIERRE -->
+                <section id="sec-10" class="scroll-mt-24 doc-section">
+                    <div class="bg-gradient-to-br from-purple-900 to-indigo-900 text-white rounded-2xl p-8 sm:p-12 shadow-xl">
+                        <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3 border-b border-purple-700/50 pb-6">
+                            <i class="ph ph-flag text-purple-300 text-3xl"></i> 10. Modelo Objetivo
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mb-10">
+                            <div class="bg-white/10 p-5 rounded-xl backdrop-blur-sm">
+                                <h4 class="font-bold text-purple-200 mb-2">Identidad</h4>
+                                <p class="text-sm">Imprenta rápida 24 hs + gigantografía + atención ágil para empresas y público final.</p>
+                            </div>
+                            <div class="bg-white/10 p-5 rounded-xl backdrop-blur-sm">
+                                <h4 class="font-bold text-purple-200 mb-2">Comercial</h4>
+                                <p class="text-sm">Mostrador + WhatsApp + Mercado Libre + luego tienda propia.</p>
+                            </div>
+                            <div class="bg-white/10 p-5 rounded-xl backdrop-blur-sm">
+                                <h4 class="font-bold text-purple-200 mb-2">Operativa</h4>
+                                <p class="text-sm">Digital rápida separada de offset. Cola por prioridad. Presupuestos cerrados.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-800/50 border border-purple-400/30 p-6 rounded-xl mb-10">
+                            <h4 class="text-purple-200 font-bold uppercase tracking-widest mb-3 text-sm flex items-center gap-2">
+                                <i class="ph ph-trend-up text-lg"></i> Resultado esperado
+                            </h4>
+                            <p class="text-lg font-light leading-relaxed italic">
+                                Más pedidos cortos y frecuentes, menos tiempo en cotizaciones, mayor rotación, mejor uso de digital, incremento de recompra. Un negocio más rentable y escalable.
+                            </p>
+                        </div>
+
+                        <div class="border-t border-purple-700/50 pt-8 mt-4">
+                            <h3 class="text-2xl font-bold text-white mb-4">Cierre estratégico</h3>
+                            <p class="text-purple-100 text-lg leading-relaxed mb-4">
+                                La transformación no depende primero de comprar más tecnología, sino de <strong>rediseñar la oferta, ordenar el flujo, estandarizar, poner precios y activar ventas.</strong>
+                            </p>
+                            <p class="text-purple-100 text-lg leading-relaxed font-medium">
+                                La imprenta tiene que dejar de operar como un taller que responde a demanda dispersa y pasar a operar como un negocio comercial de respuesta rápida.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+        </main>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-200 py-8 mt-auto text-center text-sm text-gray-400">
+        <p>Documento estratégico integral. Dafer Industria Gráfica &copy; 2026</p>
+    </footer>
+
+    <!-- Lógica de navegación (JavaScript) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.doc-section');
+            const navButtons = document.querySelectorAll('.nav-btn');
+
+            // Scroll suave al hacer clic
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Actualizar menú activo al hacer scroll
+            window.addEventListener('scroll', () => {
+                let current = 'cabecera';
+                const scrollY = window.scrollY;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navButtons.forEach(btn => {
+                    // Resetear clases por defecto
+                    btn.classList.remove('border-purple-600', 'text-purple-800', 'font-bold', 'bg-purple-50/50');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+
+                    // Añadir clases activas al botón correspondiente
+                    if (btn.getAttribute('data-target') === current) {
+                        btn.classList.add('border-purple-600', 'text-purple-800', 'font-bold', 'bg-purple-50/50');
+                        btn.classList.remove('border-transparent', 'text-gray-500');
+                    }
+                });
+            });
+
+            // Disparar evento inicial para establecer el primer elemento
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>
